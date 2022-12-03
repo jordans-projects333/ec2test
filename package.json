@@ -1,20 +1,19 @@
 {
-    "name": "node-hello",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "start": "node index.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/johnpapa/node-hello.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/johnpapa/node-hello/issues"
-    },
-    "homepage": "https://github.com/johnpapa/node-hello#readme"
-  }
+  "name": "test",
+  "version": "1.0.0",
+  "description": "testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordans-projects333/ec2test.git"
+  },
+  "author": "jordan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordans-projects333/ec2test/issues"
+  },
+  "homepage": "https://github.com/jordans-projects333/ec2test#readme"
+}

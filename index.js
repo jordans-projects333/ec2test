@@ -1,5 +1,7 @@
 var http = require('http');
+const person = require("./variable")
 
+console.log(person)
 //create a server object:
 http.createServer(function (req, res) {
   res.write('one small W for man, one fat W for mankind'); //write a response to the client
