@@ -4,14 +4,226 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/c18fd5402b.js" crossorigin="anonymous"></script>
+    <script src="bannerPreload.js"></script>
+    <script src="settings.js"></script>
+    <script async src="dataCollection.js"></script>
+    <script defer src="dataAppending.js"></script>
+    <title>Bubbles</title>
 </head>
 <body>
-    <form id="theform">
-        <label>Enter email</label>
-        <input class ="userEmail" type="email">
-        <button class="thebutton" type="submit">submit</button>
-        <script src="main.js"></script>
-    </form>
+    <header class="main-header">
+        <!-- <img class="navbar-logo" src="./img/"> -->
+        <h1 class="title">Beyond Basic Bubbles</h1>
+        <nav class="navbar">
+            <ul class="navbar-list-container">
+                
+            </ul>
+        </nav>
+        <a href="cart.html" class="cart-icon"><i class="fa-solid fa-basket-shopping"></i></a>
+        <div class="mobile-navigation">
+            <div class="mobile-nav-bar-container">
+                <span class="mobile-nav-bar"></span>
+                <span class="mobile-nav-bar"></span>
+                <span class="mobile-nav-bar"></span>
+            </div>
+        </div>
+    </header>
+    <div class="slideContent">
+        <main>
+            <section class="logo-section">
+                <div class="socials">
+                    <ul>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <!-- <li><i class="fa-brands fa-facebook-f"></i></li> -->
+                        <!-- <li><i class="fa-brands fa-facebook"></i></li> -->
+                        <li><i class="fa-brands fa-square-facebook"></i></li>
+                        <li><i class="fa-brands fa-tiktok"></i></li>
+                    </ul>
+                </div>
+                <!-- <div class="sales-section">
+                    <h5 id="sales-number"></h5>
+                    <script src="salesdata.js"></script>
+                    <a href="https://www.etsy.com/shop/BeyondBasicBubbles#reviews"><div>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div></a>
+                </div> -->
+                <div class="heading-section">
+                    <h4 id="heading">Gift Sets, Skin Care, Bath & Body Products</h4>
+                </div>
+                <div class="logo-container">
+                    <div class="logo-image-container">
+                        <div class="bubble-container">
+                            <div id="bubble1" class="bubble"></div>
+                            <div id="bubble2" class="bubble"></div>
+                            <div id="bubble3" class="bubble"></div>
+                            <div id="bubble4" class="bubble"></div>
+                            <div id="bubble5" class="bubble"></div>
+                            <div id="bubble6" class="bubble"></div>
+                            <div id="bubble7" class="bubble"></div>
+                            <div id="bubble8" class="bubble"></div>
+                            <div id="bubble9" class="bubble"></div>
+                            <div id="bubble10" class="bubble"></div>
+                            <div id="bubble11" class="bubble"></div>
+                            <div id="bubble12" class="bubble"></div>
+                            <div id="bubble13" class="bubble"></div>
+                            <div id="bubble14" class="bubble"></div>
+                            <div id="bubble15" class="bubble"></div>
+                            <div id="bubble16" class="bubble"></div>
+                        </div>
+                        <div class="logo-image-section1">
+                            <img class="logo-image1" src="./img/remove1.png">
+                            <img class="logo-image2" src="./img/remove2.png">
+                        </div>
+                    </div>
+                </div>
+                <link rel="stylesheet" href="intro.css">
+            </section>
+            <!-- <section class="temp">
+                <h5>Vegan</h5>
+                <h5>-</h5>
+                <h5>Cruelty free</h5>
+                <h5>-</h5>
+                <h5>Handmade</h5>
+                <h5>-</h5>
+                <h5>Saftey assessed</h5>
+            </section>
+        -->
+            <section class="products">
+                <div class="filter glass">
+                    <div class="filter-wrapper">
+                        <div class="filter-item active-filter" onclick="filterClick(this)">
+                            <div class="filter-icon" id="first-icon">
+                                <i class="fa-solid fa-bomb"></i>
+                                <i class="fa-solid fa-soap"></i>
+                                <i class="fa-regular fa-gem"></i>
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+                            <div class="filter-text">All products</div>
+                        </div>
+                        <!-- <div class="filter-item">-</div> -->
+                        <div class="filter-item" onclick="filterClick(this)">
+                            <div class="filter-icon"><i class="fa-solid fa-gift"></i></i></div>
+                            <div class="filter-text">Sets</div>
+                        </div>
+                        <!-- <div class="filter-item">-</div> -->
+                        <div class="filter-item" onclick="filterClick(this)">
+                            <div class="filter-icon"><i class="fa-solid fa-bomb"></i></div>
+                            <div class="filter-text">Bath bombs</div>
+                        </div>
+                        <!-- <div class="filter-item">-</div> -->
+                        <div class="filter-item" onclick="filterClick(this)">
+                            <div class="filter-icon"><i class="fa-regular fa-gem"></i></i></div>
+                            <div class="filter-text">Rocks</div>
+                        </div>
+                        <!-- <div class="filter-item">-</div> -->
+                        <div class="filter-item" onclick="filterClick(this)">
+                            <div class="filter-icon"><i class="fa-solid fa-soap"></i></i></div>
+                            <div class="filter-text">Bars/Salts</div>
+                        </div>
+                        <div class="filter-slider"></div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="grid-container">
+                    <!-- <div class="loader" id="main-loader">
+                        <div class="loader-item">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                    </div> -->
+                    <template id="grid-item-template">
+                        <div class="grid-item unloaded" onclick="getProduct(this)">
+                            <div class="loader item-loader">
+                                <div class="loader-item loader-item-small">
+                                    <div class="circle item-circle"></div>
+                                    <div class="circle item-circle"></div>
+                                </div>
+                            </div>
+                            <img>
+                            <!-- <button class="addToCart" onclick="addedToCart(this)"><i class="fa-solid fa-cart-plus"></i></button> -->
+                            <div class="text-container">
+                                <h5></h5>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </section>
+            <template id="addToCartTemplate">
+                <div class="addToCartPopUp">
+                    <h3></h3>
+                </div>
+            </template>
+            <div class="pop-up">
+                <form class="buy" method="POST" action="send">
+                    <h2>purchase:</h2>
+                    <label>Full Name</label>
+                    <input>
+                    <label>Country</label>
+                    <input>
+                    <label>County(optional)</label>
+                    <input>
+                    <label>City</label>
+                    <input>
+                    <label>Post code</label>
+                    <input>
+                    <label>Street address</label>
+                    <input>
+                    <label>Flat/Other(optional)</label>
+                    <input>
+                    <button type="submit">Continue to payment</button>
+                </form>
+            </div>
+            <div class="productInfoSection">
+                <button onclick="backHome()">Home</button>
+                <img class="product-image" >
+                <h4 class="product-title"></h4>
+                <h5 class="product-description"></h5> 
+                <button class="addToCart" onclick="addedToCart(this)"><i class="fa-solid fa-cart-plus"></i></button>
+
+            </div>
+        </main>
+        <!-- <footer class="main-footer">
+            <div class="footer-inner-container">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-col-content">
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <ul class="footer-col-content-socials">
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-tiktok"></i></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer> -->
+        <footer class="main-footer">
+            <div class="footer-primary-content">
+                <!-- <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                </ul> -->
+            </div>
+            <div class="footer-secondary-content">
+                <p>copyright &copy; 2022 Example. designed by <span>example</span></p>
+            </div>
+        </footer>
+    </div>
+    <script src="products-grid-items.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

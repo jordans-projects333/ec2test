@@ -1,0 +1,64 @@
+#bubble1{
+    animation: introbubble .8s forwards .2s;
+    -webkit-animation: introbubble .8s forwards .2s;
+}
+#bubble2{
+    animation: introbubble .4s forwards .2s;
+    -webkit-animation: introbubble .4s forwards .2s;
+}
+#bubble3{
+    animation: introbubble .6s forwards .2s;
+    -webkit-animation: introbubble .6s forwards .2s;
+}
+#bubble4{
+    animation: introbubble .4s forwards .2s;
+    -webkit-animation: introbubble .4s forwards .2s;
+}
+#bubble5{
+    animation: introbubble 1s forwards .2s;
+    -webkit-animation: introbubble 1s forwards .2s;
+}
+#bubble6{
+    animation: introbubble 1s forwards .2s;
+    -webkit-animation: introbubble 1s forwards .2s;
+}
+#bubble7{
+    animation: introbubble .8s forwards .2s;
+    -webkit-animation: introbubble .8s forwards .2s;
+}
+#bubble8{
+    animation: introbubble 0.6s forwards .2s;
+    -webkit-animation: introbubble .6s forwards .2s;
+}
+#bubble9{
+    animation: introbubble 0.4s forwards .2s;
+    -webkit-animation: introbubble .4s forwards .2s;
+}
+#bubble10{
+    animation: introbubble 1.2s forwards .2s;
+    -webkit-animation: introbubble 1.2s forwards .2s;
+}
+#bubble11{
+    animation: introbubble 1.4 forwards .2ss;
+    -webkit-animation: introbubble 1.4s forwards .2s;
+}
+#bubble12{
+    animation: introbubble 1s forwards .2s;
+    -webkit-animation: introbubble 1s forwards .2s;
+}
+#bubble13{
+    animation: introbubble 0.8s forwards .2s;
+    -webkit-animation: introbubble .8s forwards .2s;
+}
+#bubble14{
+    animation: introbubble 0.6s forwards .2s;
+    -webkit-animation: introbubble .6s forwards .2s;
+}
+#bubble15{
+    animation: introbubble 1s forwards .2s;
+    -webkit-animation: introbubble 1s forwards .2s;
+}
+#bubble16{
+    animation: introbubble 1s forwards .2s;
+    -webkit-animation: introbubble 1s forwards .2s;
+}
