@@ -1,1 +1,14 @@
-Node js is a runtime
+path.basename(__filename) = index.js
+path.dirname(__filename) = /users/jordan/folder1/index.js
+path.extname(__filename) = .js
+
+path.parse(__filename) = {
+    root
+    dir
+    base
+    ext
+    name
+}
+
+../test/hello.html
+path.join(__dirname, 'test', 'hello.html')
