@@ -1,17 +1,32 @@
-const http = require('http')
-const path = require("path")
-const fs = require("fs")
+const request = require("request")
 
-// ===== works for html only =====
-// http.createServer((req, res) => {
-//   if(req.url === '/'){
-//     fs.readFile(path.join(__dirname, "public", "index.html"), (err, content) => {
-//       if(err) throw err;
-//       res.writeHead(200, {'Content-Type': 'text/html'})
-//       res.end(content)
-//     })
-//   }
-// }).listen(80, () => console.log("server listening on port 80"))
+const express = require('express')
+const bodyParser = require('body-parser')
+
+const path = require('path')
+const server = express()
+server.use(express.static(path.join(__dirname, 'public')))
+const PORT = process.env.PORT || 80
+const cors = require("cors")
+server.use(cors())
+
+server.set('views', path.join(__dirname, '/public'));
+server.set('view engine', 'ejs');
+
+server.get('/', (req, res) => {
+    res.render("index")
+})
+// server.get('/', (req, res) => {
+//     res.send('hello')
+// })
+
+// === Body Parser Middleware ===
+server.use(bodyParser.urlencoded({extended: false}))
+server.use(bodyParser.json())
+// === Send message Api ===
+
+
+// Sends data if requested containing data.js object items
 const { data } = require("./data.js")
 Object.keys(data).forEach((i, index) => {
     server.get(`/item${index}`, (req, res) => {
@@ -35,7 +50,11 @@ Object.keys(data).forEach((i) => {
         res.sendFile(__dirname + `/serverImages/${data[i].image}`)
     })
 })
-
+// data will be fetch and totals added, 1 item fetched = +1 set and +1 bomb, it cant fetch a duplicate if one /itemBomb is a list and the first item gets popped?
+// what if http exist in a popable list?
+// if data was sent already then send next in line?
+// ================================================================================================================================================================================================
+// Set totals for each category
 totalData = {total: 0, priority: 0, set: 0, bomb: 0, rocks: 0, bar: 0}
 totalData.total = Object.keys(data).length
 Object.keys(data).forEach(i =>{
@@ -113,44 +132,82 @@ setRequests("bomb")
 setRequests("rocks")
 setRequests("bar")
 console.log(totalData)
-http.createServer((req, res) => {
-  let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url)
-  let extname = path.extname(filePath)
-  let contentType = "text/html"
-  switch(extname){
-    case '.js':
-      contentType = 'text/javascript'
-      break
-    case '.css':
-      contentType = 'text/css'
-      break
-    case '.json':
-      contentType = 'application/json'
-      break
-    case '.png':
-      contentType = 'image/png'
-      break
-    case '.jpg':
-      contentType = 'image/jpg'
-      break
-  }
-  // read
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      if(err.code == 'ENOENT'){
-        //page not found
-        fs.readFile(path.join(__dirname, 'public', '404.html'), (err, content)=> {
-          res.writeHead(200, {'Content-Type': 'text/html'})
-          res.end(content, 'utf8')
-        })
-      }else{
-        //server error
-        res.writeHead(500)
-        res.end('sever error')
-      }
-    }else{
-      res.writeHead(200, {'Content-Type': contentType})
-      res.end(content, 'utf8')
-    }
-  })
-}).listen(80, () => console.log("server listening on port 80"))
+// positions and routes added, add ignore lists to each filter and delete if ignore value is lower than current amount loaded
+// ===========================================================================================================================================================================================================
+// Webscraping salesNumber from Etsy
+
+
+// server.post('/send', (req, res) => {
+//     console.log(req.body.phoneNumber)
+//     const to = req.body.phoneNumber
+//     const text = req.body.message
+//     // nexmo.message.sendSms(from, to, text)
+    
+//     const output = `
+//         <p>I am testing emailing</p>
+//         <h3>Begin test</h3>
+//         <ul>
+//             <li>Name: ${req.body.message}</li>
+//         </ul>
+//     `;
+//     const options = {
+//         from: "jordanroberts333@icloud.com",
+//         to: "sarah.burdett93@gmail.com",
+//         subject: "Test email",
+//         html: output
+//         // text: "test 2"
+//     }
+//     // create reusable transporter object using the default SMTP transport
+//     let transporter = nodemailer.createTransport({
+//         service: "icloud",
+//         auth: {
+//             user: "jordanroberts333icloud.com",
+//             pass: "li",
+//         },
+//     });
+
+//     // send mail with defined transport object
+//     transporter.sendMail(options, (err, info)=>{
+//         if(err){
+//             console.log(err)
+//             return
+//         }
+//         console.log("sent: "+info.response)
+//     });
+// })
+// 447984858002
+
+
+// const output = `
+// <p>I am testing emailing</p>
+// <h3>Begin test</h3>
+// <ul>
+//     <li>Name: Jordan</li>
+// </ul>
+// `;
+// const options = {
+// from: "jordanroberts654@outlook.com",
+// to: "sarah.burdett93@gmail.com",
+// subject: "Milk please",
+// // html: output
+// text: "go get milk"
+// }
+// // create reusable transporter object using the default SMTP transport
+// let transporter = nodemailer.createTransport({
+// service: "outlook",
+// auth: {
+//     user: "jordanroberts654@outlook.com",
+//     pass: "Jaws12345",
+// },
+// });
+
+// // send mail with defined transport object
+// transporter.sendMail(options, (err, info)=>{
+// if(err){
+//     console.log(err)
+//     return
+// }
+// console.log("sent: "+info.response)
+// });
+// ====================================
+server.listen(PORT, ()=>{console.log(`Server running on port ${PORT}`)});
