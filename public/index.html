@@ -180,12 +180,14 @@
                 </form>
             </div>
             <div class="productInfoSection">
-                <button onclick="backHome()">Home</button>
-                <img class="product-image" >
+                <button class="back" onclick="backHome()">Back</button>
+                <div class="img-wrapper">
+                    <img class="product-image" >
+                </div>
                 <h4 class="product-title"></h4>
                 <h5 class="product-description"></h5> 
-                <button class="addToCart" onclick="addedToCart(this)"><i class="fa-solid fa-cart-plus"></i></button>
-
+                <!-- <i class="fa-solid fa-cart-plus"></i> -->
+                <button class="addToCart" onclick="addedToCart(this)">Add to cart</button>
             </div>
         </main>
         <!-- <footer class="main-footer">
