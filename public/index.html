@@ -180,14 +180,45 @@
                 </form>
             </div>
             <div class="productInfoSection">
-                <button class="back" onclick="backHome()">Back</button>
+                <button class="back" onclick="backHome()">Return to home</button>
                 <div class="img-wrapper">
                     <img class="product-image" >
                 </div>
-                <h4 class="product-title"></h4>
-                <h5 class="product-description"></h5> 
+                <div class="photo-bar-wrapper">
+                    <div class="photo-bar photo-bar-active"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                    <div class="photo-bar"></div>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title"></h4>
+                    <div class="description-wrapper">
+                        <h4>Description</h4>
+                        <h5 class="product-description"></h5>
+                    </div>
+                    <button class="options">options</button>
+                    <button class="addToCart" onclick="addedToCart(this)">Add to cart</button>
+                </div>
+                <h3 class="review-title">Reviews</h3>
+                <div class="reviews-wrapper">
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                    <div class="review"></div>
+                </div>
+                
                 <!-- <i class="fa-solid fa-cart-plus"></i> -->
-                <button class="addToCart" onclick="addedToCart(this)">Add to cart</button>
+                
             </div>
         </main>
         <!-- <footer class="main-footer">
