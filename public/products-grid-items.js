@@ -112,6 +112,7 @@ function filterClick(e){
 
 function getProduct(e){
     // Transition
+    console.log(e)
     document.querySelector(".productInfoSection").classList.remove("slideOneOut")
     document.querySelector(".slideContent").classList.remove("slideTwoIn")
     document.querySelector(".productInfoSection").classList.add("slideOneIn")
@@ -132,4 +133,16 @@ function backHome(){
     document.querySelector(".slideContent").classList.remove("slideTwoOut")
     document.querySelector(".productInfoSection").classList.add("slideOneOut")
     document.querySelector(".slideContent").classList.add("slideTwoIn")
+}
+
+function share(){
+    if(navigator.share){
+        navigator.share({
+            title: "yeah",
+            url: 'http://18.130.183.240/'
+        }).then(() => console.log("shared")
+        ).catch(console.log("error"))
+    }else{
+        console.log("not compatable")
+    }
 }
